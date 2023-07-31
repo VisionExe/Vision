@@ -48,7 +48,7 @@ local function object(class, properties)
 	})
 end
 
---[[if not ((rs:IsStudio() and game.Players.LocalPlayer.PlayerGui) or game.CoreGui):FindFirstChild("Abstract Artemis") then
+--[[if not ((rs:IsStudio() and game.Players.LocalPlayer.PlayerGui) or game.CoreGui):FindFirstChild("Abstract Notifications") then
 
 end]]
 
@@ -56,7 +56,7 @@ local gui = object("ScreenGui", {
 	Parent = (rs:IsStudio() and game.Players.LocalPlayer.PlayerGui) or game.CoreGui
 })
 
-local Artemis = {
+local notifications = {
 	theme = "dark",
 	colorSchemes = {
 		dark = {
@@ -72,8 +72,8 @@ local Artemis = {
 	closeOpened = nil
 }
 
-function Artemis:notify(options)
-	local theme = self.colorSchemes[Artemis.theme]
+function notifications:notify(options)
+	local theme = self.colorSchemes[notifications.theme]
 	local callbacksBool = options.Accept or options.Dismiss
 	options.Title = options.Title or "Notification"
 	if not callbacksBool then
@@ -264,12 +264,12 @@ function Artemis:notify(options)
 	end)
 end
 
-function Artemis:notification(options)
+function notifications:notification(options)
 	self:notify(options)
 end
 
-function Artemis:message(options)
+function notifications:message(options)
 	self:notify(options)
 end
 
-return Artemis
+return notifications
