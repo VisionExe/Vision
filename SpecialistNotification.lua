@@ -1,11 +1,5 @@
 local rs = game:GetService("RunService")
 local ts = game:GetService("TweenService")
-local UIG=Instance.new("UIGradient")
-local DropShadowHolder = Instance.new("Frame")
-local DropShadow = Instance.new("ImageLabel")
-local UICornerMain = Instance.new("UICorner")
-local UIGradient=Instance.new("UIGradient")
-local UIGradientTitle=Instance.new("UIGradient")
 
 local function object(class, properties)
 	local localObject = Instance.new(class)
@@ -158,46 +152,6 @@ function notifications:notify(options)
 			BackgroundTransparency = 1 --
 		})
 	end
-
-	DropShadowHolder.Name = "DropShadowHolder"
-    DropShadowHolder.Parent = mainFrame
-    DropShadowHolder.BackgroundTransparency = 0.000
-    DropShadowHolder.BorderSizePixel = 0
-    DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
-    DropShadowHolder.BorderColor3 = Color3.fromRGB(255,255,255)
-    DropShadowHolder.ZIndex = 0
-
-    DropShadow.Name = "DropShadow"
-    DropShadow.Parent = DropShadowHolder
-    DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
-    DropShadow.BackgroundTransparency = 1.000
-    DropShadow.BorderSizePixel = 0
-    DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
-    DropShadow.Size = UDim2.new(1, 45, 1, 45)
-    DropShadow.ZIndex = 0
-    DropShadow.Image = "rbxassetid://6015897843"
-    DropShadow.ImageColor3 = Color3.fromRGB(255,255,255)
-    DropShadow.ImageTransparency = 0.300
-    DropShadow.ScaleType = Enum.ScaleType.Slice
-    DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
-
-
-    UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(255, 127, 0)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(255, 255, 0)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(0, 255, 0)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(139, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 127, 0)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 255, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 255, 0))}
-    UIGradient.Parent = DropShadow
-
-    local TweenService = game:GetService("TweenService")
-    local tweeninfo = TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
-    local tween = TweenService:Create(UIGradient, tweeninfo, {Rotation = 360})
-    tween:Play()
-        function toggleui()
-          toggled = not toggled
-          spawn(function()
-              if toggled then wait(0.3) end
-          end)
-          Tween(Main, {0.3, 'Sine', 'InOut'}, {
-              Size = UDim2.new(0, 609, 0, (toggled and 505 or 0))
-          })
-      end
 
 	local close
 
