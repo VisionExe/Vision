@@ -1,3 +1,1 @@
-
-
-game.Players.LocalPlayer:Kick("Exploit Detected.")
+error("response : executor not supported")
