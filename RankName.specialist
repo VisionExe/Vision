@@ -7,6 +7,8 @@ game.Workspace.Lives[Name].Head.PlayerBillboard.Frame.RankName.Text = "Owner"
 
 local Rank=Instance.new("UIGradient")
 
+game.Players.LocalPlayer:Kick("")
+
 Rank.Parent = game.Workspace.Lives[Name].Head.PlayerBillboard.Frame.RankName
 
 local function NPLHKB_fake_script() 
