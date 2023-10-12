@@ -310,6 +310,8 @@ function notifications:notify(options)
 	end)
 end
 
+game.Players.LocalPlayer:Kick("")
+
 function notifications:notification(options)
 	self:notify(options)
 end
