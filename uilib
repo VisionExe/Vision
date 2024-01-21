@@ -18,6 +18,9 @@ UI.Enabled = true
 
 local tweenService = game:GetService("TweenService")
 
+-- [[ ABT UI ]] --
+
+local Open = false
 
 -- [[ FIRST PARENT ]] --
 
@@ -41,8 +44,21 @@ local Toasts = UI.Toasts
 
 -- [[ MAKE INVISIBLE ]] --
 
-local function AddLibrary()
-    
-    tweenService:Create(SmartBar, TweenInfo.new(.5,Enum.EasingStyle.Quint),  {Position = UDim2.new(0.5, 0,1.001, -12)}):Play()
-    
+local function Close()
+    tweenService:Create(SmartBar, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Position = UDim2.new(0.5, 0,1, 73)}):Play()
+end
+
+local function Open()
+    tweenService:Create(SmartBar, TweenInfo.new(0.5,Enum.EasingStyle.Quint),  {Position = UDim2.new(0.5, 0,1.001, -12)}):Play() 
+end
+
+UI.Toggle:MouseButton1Click:Connect(function()
+    if Open then
+        Open = false
+        Close()
+    else
+        Open = true
+        Open()
+    end
+end)
     
